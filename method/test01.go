@@ -1,2 +1,7 @@
 package method
-111
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, World!")
+}
