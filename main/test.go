@@ -3,7 +3,6 @@ package main //声明文件所在包，每个go文件必须有归属包
 import (
 	"fmt"
 	_ "fmt"
-	"strconv"
 )
 
 func main() {
@@ -54,10 +53,16 @@ func main() {
 	var num2 int64 = 100
 	fmt.Println(int(num2))*/
 
-	var num3 = 100
+	/*var num3 = 100
 	var str1 = "100a"
 	fmt.Println(strconv.Itoa(num3))
-	fmt.Println(strconv.Atoi(str1))
+	fmt.Println(strconv.Atoi(str1))*/
+
+	var str2 string = "今天天气真好"
+	var byte1 = []byte{228, 187, 138, 229, 164, 169, 229, 164, 169, 230, 176, 148, 231, 156, 159, 229, 165, 189}
+
+	fmt.Println([]byte(str2))
+	fmt.Println(string(byte1))
 }
 
 /*func get() (res int, err error) {
