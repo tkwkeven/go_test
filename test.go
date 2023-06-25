@@ -2,10 +2,11 @@ package main //声明文件所在包，每个go文件必须有归属包
 
 import (
 	"fmt"
-	_ "fmt"
 )
 
 func main() {
+
+	fmt.Println("ff")
 	/*var x int
 	fmt.Println(x)*/
 
@@ -58,11 +59,22 @@ func main() {
 	fmt.Println(strconv.Itoa(num3))
 	fmt.Println(strconv.Atoi(str1))*/
 
-	var str2 string = "今天天气真好"
-	var byte1 = []byte{228, 187, 138, 229, 164, 169, 229, 164, 169, 230, 176, 148, 231, 156, 159, 229, 165, 189}
+	//var str2 string = "今天天气真好"
+	//var byte1 = []byte{228, 187, 138, 229, 164, 169, 229, 164, 169, 230, 176, 148, 231, 156, 159, 229, 165, 189}
 
-	fmt.Println([]byte(str2))
-	fmt.Println(string(byte1))
+	/*fmt.Println([]byte(str2))
+	fmt.Println(string(byte1))*/
+
+	/*fmt.Println([]rune(str2))
+
+	var runeList = []rune{20170, 22825, 22825, 27668, 24456, 22909}
+	fmt.Println(string(runeList[3]))
+	fmt.Println(string(runeList))*/
+
+	/*var inf interface{} = "100"
+	i, err := inf.(int)
+	fmt.Println(i, err)*/
+
 }
 
 /*func get() (res int, err error) {
