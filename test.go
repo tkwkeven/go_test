@@ -1,12 +1,43 @@
 package main //声明文件所在包，每个go文件必须有归属包
-
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 
-	fmt.Println("ff")
+	var list []int = make([]int, 5)
+	var mp map[string]int = make(map[string]int, 5)
+
+	var ch chan int64 = make(chan int64, 2)
+
+	fmt.Println(list)
+	fmt.Println(mp)
+	fmt.Println(ch)
+
+	if list == nil {
+		fmt.Println("list为空")
+	} else if mp == nil {
+		fmt.Println("mp为空")
+	} else if ch == nil {
+		fmt.Println("ch为空")
+
+	}
+	/*var i *int = new(int)
+	fmt.Println(*i)
+
+	var list []int = make([]int, 5, 10)
+	fmt.Println(len(list), cap(list))
+
+	list[4] = 11
+	fmt.Println(list)
+
+	list1 := list[:10]
+	fmt.Println(list1)*/
+
+	/*str1 := "abc"
+	fmt.Println(utf8.ValidString(str1))*/
+
+	/*fmt.Println("ff")
+	f1.F1()
+	f2.F2()*/
 	/*var x int
 	fmt.Println(x)*/
 

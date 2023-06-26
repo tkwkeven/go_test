@@ -2,6 +2,6 @@ package test1
 
 import "fmt"
 
-func F1() {
-	fmt.Println("ffff1")
+func F2() {
+	fmt.Println("ffff2")
 }
