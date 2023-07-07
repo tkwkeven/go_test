@@ -1,6 +1,37 @@
 package main //声明文件所在包，每个go文件必须有归属包
+import (
+	"fmt"
+	"sync"
+)
 
 func main() {
+
+	var wg sync.WaitGroup
+	done := make(chan struct{})
+	ch := make(chan interface{}, 10)
+	work := 10
+
+	for i := 0; i < work; i++ {
+		wg.Add(1)
+		go doo(i, ch, done, &wg) // wg 传指针，doo()内部会改变 wg的值
+	}
+	// 主进程充当生产者，向通道里发送消息
+	for i := 0; i < work; i++ {
+		ch <- i
+	}
+	// 关闭通道，当生产者完成所有消息的生产之后，主动关闭通道
+	close(ch)
+	// 关闭done通道，利用广播消息通知所有 goroutine 关闭信号
+	close(done)
+	wg.Wait()
+	fmt.Println("all done!")
+
+	/*work := 2
+	for i := 0; i < work; i++ {
+		go doo(i)
+	}
+	time.Sleep(1 * time.Second)
+	fmt.Println("all done!")*/
 
 	/*var mp = make(map[int]string)
 	mp[1] = "a"
@@ -137,6 +168,22 @@ func main() {
 	i, err := inf.(int)
 	fmt.Println(i, err)*/
 
+}
+
+func doo(work int, ch <-chan interface{}, done <-chan struct{}, wg *sync.WaitGroup) {
+	fmt.Printf("[%v] is running\n", work)
+	defer wg.Done()
+	for {
+		select {
+		case m, ok := <-ch:
+			if ok { // 判断通道是否关闭，false表示关闭，true表示正常
+				fmt.Printf("[%v] m => %v\n", work, m)
+			}
+		case <-done: // 只要接受到该通道发来的任何消息，都判定为收到关闭消息，改操作利用了通道的关闭时的广播消息
+			fmt.Printf("[%v] IS done\n", work)
+			return
+		}
+	}
 }
 
 /*func setaaa(arr [5]int) {
