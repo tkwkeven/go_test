@@ -17,11 +17,14 @@ func main() {
 
 	//method.Newss("aaa", 2)
 	fmt.Println("------------")
-	//var ss *method.Users
-	//method.Getname()
+	as := &method.Ssa{Name: "fff"}
+	fmt.Println(as.Getname())
 
-	/*	fmt.Println(method.Newss("aa", 4))
-		fmt.Println(method.Getname(method.Newss("aa", 4)))*/
+	/*var ss *method.Ssa
+	fmt.Println(ss.Getname())*/
+
+	//fmt.Println(method.Newss("aa", 4))
+	//fmt.Println(method.Newss("aa", 4).Getname())
 
 	/*a := 10
 	b := 20*/

@@ -5,14 +5,14 @@ type Ssa struct {
 	Age  int
 }
 
-func Getname(s *Ssa) string {
-	return s.Name
+func (u *Ssa) Getname() string {
+	return u.Name
 }
 
-/*var sa *Ssa
+var sa Ssa
 
 func Newss(name string, age int) *Ssa {
-	sa.name = name
-	sa.age = age
-	return sa
-}*/
+	sa.Name = name
+	sa.Age = age
+	return &sa
+}
