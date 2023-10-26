@@ -15,10 +15,13 @@ var t1 method.JieGouTi1
 
 func main() {
 
+	//泛型的使用
+	fmt.Println(method.GetMax_[float64](3, 4))
+
 	//method.Newss("aaa", 2)
-	fmt.Println("------------")
+	/*fmt.Println("------------")
 	as := &method.Ssa{Name: "fff"}
-	fmt.Println(as.Getname())
+	fmt.Println(as.Getname())*/
 
 	/*var ss *method.Ssa
 	fmt.Println(ss.Getname())*/
