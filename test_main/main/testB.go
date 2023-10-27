@@ -17,6 +17,7 @@ func main() {
 
 	//泛型的使用
 	fmt.Println(method.GetMax_[float64](3, 4))
+	fmt.Println(method.GetF(true))
 
 	//method.Newss("aaa", 2)
 	/*fmt.Println("------------")

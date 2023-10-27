@@ -20,3 +20,8 @@ func GetMax_[T interface{ int | float64 }](a, b T) T {
 	}
 	return b
 }
+
+func GetF[T interface{ int | float64 | bool }](a T) T {
+	return a
+
+}
